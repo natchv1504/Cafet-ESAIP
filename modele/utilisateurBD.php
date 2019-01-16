@@ -16,7 +16,6 @@ function verif_bd($login, $pass, &$profil ) {
 		return true;
 	} 
 	else {
-		echo "Login ou/et Mot de passe non valide";
 		$profil = null;
 		return false;
 	}

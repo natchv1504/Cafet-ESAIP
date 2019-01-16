@@ -16,12 +16,13 @@ function ident () {
 			$_SESSION['profil'] = $profil;
 			$nexturl = "index.php?controle=commande&action=liste_commandes";
 			header ("Location:" . $nexturl);
-			echo ('controle : ' . $controle . ' et <br/> action : ' . $action);	
+			//echo ('controle : ' . $controle . ' et <br/> action : ' . $action);	
 			require ('./controle/commande.php');
 			$action ();
 		}
 		else {
 			//$msg = $err;
+			$msg = "Login ou/et Mot de passe non valide";
 			require("vue/utilisateur/ident.tpl");
 		}
 	}
@@ -41,8 +42,11 @@ function verif_ident($login, $pass, &$err) {
 }
 
 
-function logout($login, $pass){
-
+function logout(){
+	session_unset();
+	session_destroy();
+	$pass = '';$login = '';$msg = '';
+	require("vue/utilisateur/ident.tpl");
 }
 
 function edit(){

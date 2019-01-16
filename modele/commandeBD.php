@@ -4,7 +4,7 @@
 function commandes() {
 	require ("modele/connectBD.php") ; //connexion $link à MYSQL et sélection de la base
 
-	$sql = "select c.numeroCommande as numCo, u.login as log, c.prix as prix, date from commande c, utilisateurs u
+	$sql = "select c.numeroCommande as numCo, u.login as log, c.prix as prix, date from commande c, utilisateurs u 
 			where c.id_utilisateurs = u.id";
 	
 	$res = mysqli_query($link, $sql)	

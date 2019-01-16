@@ -1,6 +1,7 @@
 <!doctype html>
 <html><head>
   <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache" />
   <title>Récapitulatif des commandes</title>
   <link rel="icon" type="image/png" href="vue/images/logo/ms-icon-310x310.png" />
   <link rel="stylesheet" href="./vue/styleCSS/style.css"/>
@@ -11,17 +12,14 @@
 
 <body>
 
-<nav>
+<nav class='menu'>
 	<?php require ("vue/menu.tpl");?>
 </nav>
-
-<h1 style="padding-bottom:5%"> Vous êtes connecté en tant que <?php echo ($_SESSION['profil']['login']) ;?>
-</h1>
-
 <div id="main">
+	<p> Vous êtes connecté en tant que <?php echo ($_SESSION['profil']['login']) ;?></p>
 <?php 
 	if ($Commandes != false) {
-		echo ("<h2 style='color:blue'> Voici les commandes :</h2>");
+		echo ("<h2> Voici les commandes :</h2>");
 		echo ('<table>');	
 		foreach ($Commandes as $c) {
 			echo "<tr class='commande'>";
