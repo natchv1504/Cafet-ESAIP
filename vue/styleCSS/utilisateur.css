@@ -6,8 +6,21 @@ body {
   margin: 0;
 }
 
-html, p {
+html, body { 
+	height : 100%; 
+}
+
+h3 {
+	padding: 5px;
+}
+
+html, p, h2 {
 	margin: 0;
+}
+
+footer {
+	position: absolute; 
+	bottom: 0;
 }
 
 .loginForm {
@@ -30,10 +43,12 @@ html, p {
   border: 1px solid #ccc;
   border-radius: 4px;
 }
+
 .login:focus, .pass:focus{
     border-color:#AFAFAC;
     outline: none;
   }
+
 .login-button {
   width: 100%;
   height: 40px;
@@ -66,7 +81,7 @@ html, p {
 .menu {
   background: #C8C8C8;
   width: 100%;
-  margin: 0;
+  margin-bottom: 20px;
   padding: 0;
   float: left;
 }
@@ -159,5 +174,31 @@ html, p {
 }
 .menu.align-right li:first-child a:after {
   display: none;
+}
+
+/****Commandes****/
+.commande {
+    width: 30%;
+    padding: 0 5px 5px 5px;
+}
+
+.valider {
+	width: 8%;
+	line-height: 142px;
+	margin-left: 2px;
+	padding: 0 5px 5px 0;
+	text-align: center;
+}
+.valider, .commande {
+  background: #C8C8C8;
+  display: inline-block;
+  vertical-align: middle;
+  height: 142px;
+}
+
+.divCom {
+	margin: 2% 0;
+	padding-left: 15%;
+	padding-right: 15%;
 }
 

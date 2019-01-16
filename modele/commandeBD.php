@@ -4,8 +4,15 @@
 function commandes() {
 	require ("modele/connectBD.php") ; //connexion $link à MYSQL et sélection de la base
 
-	$sql = "select c.numeroCommande as numCo, u.login as log, c.prix as prix, date from commande c, utilisateurs u 
-			where c.id_utilisateurs = u.id";
+	$sql = "SELECT c.numeroCommande as NumeroCommande, 
+					u.login as Login, 
+					cast(sum(c.prix) as decimal(16,2)) as Prix, 
+					GROUP_CONCAT(p.nomPlat SEPARATOR ',') as Description, 
+					c.date as Date
+			FROM utilisateurs u, commande c 
+			LEFT JOIN plat p ON p.id = c.id_plat 
+			WHERE c.id_utilisateurs = u.id 
+			GROUP BY NumeroCommande ORDER BY Date";
 	
 	$res = mysqli_query($link, $sql)	
 		or die (utf8_encode("erreur de requête : ") . $sql); 
