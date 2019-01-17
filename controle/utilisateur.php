@@ -48,7 +48,3 @@ function logout(){
 	$pass = '';$login = '';$msg = '';
 	require("vue/utilisateur/ident.tpl");
 }
-
-function edit(){
-
-}

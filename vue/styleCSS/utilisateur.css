@@ -10,17 +10,24 @@ html, body {
 	height : 100%; 
 }
 
-h3 {
-	padding: 5px;
-}
-
 html, p, h2 {
 	margin: 0;
 }
 
+h2, footer{
+	margin-left: 20px;
+}
+
 footer {
-	position: absolute; 
-	bottom: 0;
+	position: absolute;
+	margin-bottom: 0px 
+}
+
+#main {
+	margin: 10px;
+	margin-top: 0;
+	max-height: 800px;
+	overflow-y: hidden;
 }
 
 .loginForm {
@@ -29,7 +36,7 @@ footer {
   width: 300px;
   padding: 30px 50px;
   background: white;
-  border: 1px solid #c4c4c4;
+  border: 1px solid #4F92EE;
   border-radius: 5px;
 }
 
@@ -45,7 +52,7 @@ footer {
 }
 
 .login:focus, .pass:focus{
-    border-color:#AFAFAC;
+    border-color:#4F92EE;
     outline: none;
   }
 
@@ -57,7 +64,7 @@ footer {
   font-size: 20px;
   color: #fff;
   text-align: center;
-  background: #AFAFAC;
+  background: #4F92EE;
   border: 0;
   border-radius: 5px;
   cursor: pointer; 
@@ -182,11 +189,18 @@ footer {
     padding: 0 5px 5px 5px;
 }
 
+img {
+	width: 80%;
+	vertical-align:middle;
+	cursor: pointer;
+}
+
 .valider {
 	width: 8%;
 	line-height: 142px;
-	margin-left: 2px;
-	padding: 0 5px 5px 0;
+	margin-left: 3px;
+	padding-top: 2.5px;
+	padding-bottom: 2.5px;
 	text-align: center;
 }
 .valider, .commande {
@@ -194,6 +208,8 @@ footer {
   display: inline-block;
   vertical-align: middle;
   height: 142px;
+  border-style: dotted;
+  border-color: #5B5B5B;
 }
 
 .divCom {
@@ -202,3 +218,18 @@ footer {
 	padding-right: 15%;
 }
 
+#num {
+	text-align: left;
+	font-size: 1.3em;
+}
+
+#prix {
+	text-align: right;
+	font-size: 2em;
+}
+
+#headCo {
+	padding: 5px;
+	font-weight: bold;
+	width: 90%;
+}
