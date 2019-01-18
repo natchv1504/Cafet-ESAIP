@@ -47,8 +47,43 @@ function isChecked($num) {
 	return $num;
 }
 
-function edit() {
+function edit(){
+	require ("modele/connectBD.php");
 
+	$sql = "SELECT id, nomPlat, prix, prixMenu FROM plat";
+	
+	$res = mysqli_query($link, $sql)	
+		or die (utf8_encode("erreur de requête : ") . $sql); 
+
+	$tab= array();
+	while ($c = mysqli_fetch_assoc($res) and isset($c)) {
+		$tab[] = $c; //tableau de produits
+	}			
+	return $tab;
 }
+
+if(isset($_POST["fonction"]) && $_POST["fonction"] == 'editBD' && isset($_POST["tabPlat"]) && !empty($_POST["tabPlat"])){
+	$tabPlat = json_decode($_POST["tabPlat"]);
+	echo json_encode(editBD($tabPlat));
+}
+
+function editBD($tabPlat) {
+	require ("./connectBD.php") ;
+	
+	$id = mysqli_real_escape_string($link, $tabPlat[0]);
+	$nomPlat = mysqli_real_escape_string($link, $tabPlat[1]);
+	$prix = mysqli_real_escape_string($link, $tabPlat[2]);
+	$prixMenu = mysqli_real_escape_string($link, $tabPlat[3]);
+	
+	$sql = "UPDATE plat
+			SET nomPlat = '$nomPlat', prix = '$prix', prixMenu = '$prixMenu'
+			WHERE id = '$id'";
+
+	$res = mysqli_query($link, $sql)	
+		or die (utf8_encode("erreur de requête : ") . $sql);
+
+	return $tabPlat;
+}
+
 
 ?>

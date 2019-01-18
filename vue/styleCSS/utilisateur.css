@@ -233,3 +233,17 @@ img {
 	font-weight: bold;
 	width: 90%;
 }
+
+
+/****Tableau edit****/
+table {
+  margin-left: 80px;
+  margin-top: 20px;
+  border-collapse:separate; 
+  border-spacing: 1em 1em;
+}
+
+.logoEdit, .logoCheck {
+  display: inline-block;
+  margin-right: 10px;
+}

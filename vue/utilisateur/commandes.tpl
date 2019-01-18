@@ -20,7 +20,7 @@
 <h2> Voici les commandes :</h2>
 <div id="main">
 <?php 
-	if ($Commandes != false) {	
+	if ($Commandes) {	
 		foreach ($Commandes as $c) {
 			$numCo = utf8_encode($c['NumeroCommande']);
 			echo "<div class='divCom' id='". $numCo . "'><div class='commande'>";

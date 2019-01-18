@@ -11,8 +11,13 @@ function liste_commandes() {
 	
 }
 
-function valider_commande() {
-	//que faire dans la bdd quand valide commande ?
+function edit_plat() {
+	
+	require ("modele/commandeBD.php");
+	$tabPlat = edit();
+	require ("./vue/utilisateur/plats.tpl");
+	
 }
+
 
 ?>
